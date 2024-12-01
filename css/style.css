@@ -1,0 +1,260 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(5deg, #f0f0f0, #e0eafc);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #e91e63;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header img {
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+header h1 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 20px;
+}
+
+.book-container {
+    margin: auto;
+    position: relative;
+    width: 400px;
+    height: 500px;
+    perspective: 1500px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #f8c8dc, #f8d7e4);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    cursor: pointer;
+    transition: transform 0.8s, box-shadow 0.3s;
+    transform-origin: left;
+}
+
+.cover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.cover h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.cover p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.cover button {
+    padding: 10px 20px;
+    border: none;
+    background: #fff;
+    color: #e91e63;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.cover button:hover {
+    background: #e0e0e0;
+}
+
+.pages {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    transform-origin: left;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+}
+
+.page:nth-child(1) {
+    z-index: 9;
+}
+
+.page:nth-child(2) {
+    z-index: 8;
+    transform: rotateY(-180deg);
+}
+
+.page:nth-child(3) {
+    z-index: 7;
+    transform: rotateY(-360deg);
+}
+
+.page.cover-back {
+    z-index: 6;
+    background: #f8d7e4; 
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    
+    transform: rotateY(-360deg);
+}
+
+footer {
+    background: #1e272e;
+    color: #d2dae2;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+.footer-animation {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer-animation .circle {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: #00a8ff;
+    border-radius: 50%;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.footer-animation .circle:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.footer-animation .circle:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes flip {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(180deg); }
+}
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.bubble-container {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Style des bulles */
+.bubble {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #f8c8dc; /* Couleur baby pink */
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: bounce 4s infinite ease-in-out;
+}
+
+/* Animation de rebond des bulles */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+}
+
+/* Positionnement dynamique des bulles */
+.bubble:nth-child(1) {
+    animation-delay: 0s;
+    left: 10%;
+    animation-duration: 3.5s;
+}
+
+.bubble:nth-child(2) {
+    animation-delay: 0.5s;
+    left: 50%;
+    animation-duration: 4s;
+}
+
+.bubble:nth-child(3) {
+    animation-delay: 1s;
+    left: 80%;
+    animation-duration: 3.8s;
+}
