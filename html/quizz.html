@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizz - May Bellaaj</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/quizz.css">
     <link rel="stylesheet" href="../js/quiz.js">
 </head>
+
 <body>
     <header>
         <h1>Quizz Connaissances Générales</h1>
@@ -18,6 +19,10 @@
                 <li><a href="../html/experiences.html">Expériences</a></li>
                 <li><a href="../html/quizz.html">Quizz</a></li>
                 <li><a href="../html/contact.html">Contact</a></li>
+                <li><a href="../html/matieres.html">Matières</a></li>
+                <li><a href="../html/passions.html">Passions</a></li>
+                <li><a href="../html/temoignage.html">Témoignage</a></li>
+                <li><a href="../html/manifest.html">Manifestations</a></li>
             </ul>
         </nav>
     </header>
@@ -30,12 +35,25 @@
             </div>
             <button id="submit" class="btn">Soumettre</button>
         </div>
-        <div id="results" class="hidden">
-        </div>
+        <div id="overlay" class="overlay"></div>
+    <div id="resultPopup" class="result-popup">
+        <div id="resultMessage" class="popup-content"></div>
+        
+       
+    <button onclick="closePopup()" class="close-button">Fermer</button>
+    
+    </div
+        <!--div id="results" class="hidden">
+        </div-->
+       
     </section>
 
-    <footer>&copy; 2024 May Bellaaj</footer>
-
+    <footer>
+        &copy; 2024 May Bellaaj | Contact : <a href="mailto:bellaajmay@gmail.com">bellaajmay@gmail.com</a>
+    </footer>
+    
     <script src="../js/quiz.js"></script> 
+ 
+
 </body>
 </html>
